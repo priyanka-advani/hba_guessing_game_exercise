@@ -14,7 +14,7 @@ number_of_guesses = 0
 
 while True:
     player_guess = raw_input('What is your guess? ')
-    if player_guess.isdigit():
+    try:
         player_guess = int(player_guess)
         if player_guess < 1 or player_guess > 100:
             print 'Please enter a number between 1 and 100 '
@@ -28,5 +28,5 @@ while True:
             else:
                 print 'Congratulations %s, you guessed the correct number in %d guesses!' % (player_name, number_of_guesses)
                 break
-    else:
+    except ValueError:
         print 'Please enter a valid number.'
