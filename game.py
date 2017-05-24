@@ -14,8 +14,10 @@ number_of_guesses = 0
 
 while True:
     player_guess = raw_input('What is your guess? ')
+    if '.' in player_guess:
+        print 'We rounded down your guess to the nearest whole number.'
     try:
-        player_guess = int(player_guess)
+        player_guess = int(float(player_guess))
         if player_guess < 1 or player_guess > 100:
             print 'Please enter a number between 1 and 100 '
         else:
